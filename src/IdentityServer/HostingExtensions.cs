@@ -13,6 +13,10 @@ internal static class HostingExtensions
         var migrationsAssembly = typeof(Program).Assembly.GetName().Name;
         const string connectionString1 = @"Data Source=cntnj03wsrvpw3v;Initial Catalog=Duende.IdentityServer.Quickstart.ConfigurationDB;Persist Security Info=True;User ID=sa;Password=Milo_chen;Connect Timeout=120;TrustServerCertificate=True";
         const string connectionString2 = @"Data Source=cntnj03wsrvpw3v;Initial Catalog=Duende.IdentityServer.Quickstart.OperationalDB;Persist Security Info=True;User ID=sa;Password=Milo_chen;Connect Timeout=120;TrustServerCertificate=True";
+
+        builder.Services.AddAuthorization();
+        builder.Services.AddRazorPages();
+
         builder.Services.AddIdentityServer()
             .AddConfigurationStore(options =>
             {

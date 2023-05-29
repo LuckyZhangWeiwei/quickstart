@@ -1,5 +1,6 @@
 using System.IdentityModel.Tokens.Jwt;
 
+
 JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
 
 var builder = WebApplication.CreateBuilder(args);
