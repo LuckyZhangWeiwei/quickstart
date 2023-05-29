@@ -10,14 +10,14 @@ internal static class HostingExtensions
     public static WebApplication ConfigureServices(this WebApplicationBuilder builder)
     {
         // uncomment if you want to add a UI
-        var migrationsAssembly = typeof(Program).Assembly.GetName().Name;
+        builder.Services.AddRazorPages();
+
+        var migrationsAssembly = typeof(Program).Assembly.FullName;
         const string connectionString1 = @"Data Source=cntnj03wsrvpw3v;Initial Catalog=Duende.IdentityServer.Quickstart.ConfigurationDB;Persist Security Info=True;User ID=sa;Password=Milo_chen;Connect Timeout=120;TrustServerCertificate=True";
         const string connectionString2 = @"Data Source=cntnj03wsrvpw3v;Initial Catalog=Duende.IdentityServer.Quickstart.OperationalDB;Persist Security Info=True;User ID=sa;Password=Milo_chen;Connect Timeout=120;TrustServerCertificate=True";
 
-        builder.Services.AddAuthorization();
-        builder.Services.AddRazorPages();
-
         builder.Services.AddIdentityServer()
+            .AddTestUsers(TestUsers.Users)
             .AddConfigurationStore(options =>
             {
                 options.ConfigureDbContext = b => b.UseSqlServer(connectionString1,
@@ -27,8 +27,7 @@ internal static class HostingExtensions
             {
                 options.ConfigureDbContext = b => b.UseSqlServer(connectionString2,
                     sql => sql.MigrationsAssembly(migrationsAssembly));
-            })
-            .AddTestUsers(TestUsers.Users);
+            });
 
         return builder.Build();
     }
