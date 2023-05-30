@@ -39,16 +39,16 @@ internal static class HostingExtensions
             //.AddInMemoryIdentityResources(Config.IdentityResources)
             //.AddInMemoryApiScopes(Config.ApiScopes)
             //.AddInMemoryClients(Config.Clients)
-            .AddConfigurationStore(options =>
-            {
-                options.ConfigureDbContext = b => b.UseSqlServer(connectionString1,
-                    sql => sql.MigrationsAssembly(migrationsAssembly));
-            })
-            .AddOperationalStore(options =>
-            {
-                options.ConfigureDbContext = b => b.UseSqlServer(connectionString2,
-                    sql => sql.MigrationsAssembly(migrationsAssembly));
-            })
+            //.AddConfigurationStore(options =>
+            //{
+            //    options.ConfigureDbContext = b => b.UseSqlServer(connectionString1,
+            //        sql => sql.MigrationsAssembly(migrationsAssembly));
+            //})
+            //.AddOperationalStore(options =>
+            //{
+            //    options.ConfigureDbContext = b => b.UseSqlServer(connectionString2,
+            //        sql => sql.MigrationsAssembly(migrationsAssembly));
+            //})
             .AddAspNetIdentity<ApplicationUser>();
 
         builder.Services.AddAuthentication()
