@@ -36,19 +36,16 @@ internal static class HostingExtensions
                 // see https://docs.duendesoftware.com/identityserver/v6/fundamentals/resources/
                 options.EmitStaticAudienceClaim = true;
             })
-            //.AddInMemoryIdentityResources(Config.IdentityResources)
-            //.AddInMemoryApiScopes(Config.ApiScopes)
-            //.AddInMemoryClients(Config.Clients)
-            //.AddConfigurationStore(options =>
-            //{
-            //    options.ConfigureDbContext = b => b.UseSqlServer(connectionString1,
-            //        sql => sql.MigrationsAssembly(migrationsAssembly));
-            //})
-            //.AddOperationalStore(options =>
-            //{
-            //    options.ConfigureDbContext = b => b.UseSqlServer(connectionString2,
-            //        sql => sql.MigrationsAssembly(migrationsAssembly));
-            //})
+            .AddConfigurationStore(options =>
+            {
+                options.ConfigureDbContext = b => b.UseSqlServer(connectionString1,
+                    sql => sql.MigrationsAssembly(migrationsAssembly));
+            })
+            .AddOperationalStore(options =>
+            {
+                options.ConfigureDbContext = b => b.UseSqlServer(connectionString2,
+                    sql => sql.MigrationsAssembly(migrationsAssembly));
+            })
             .AddAspNetIdentity<ApplicationUser>();
 
         builder.Services.AddAuthentication()
