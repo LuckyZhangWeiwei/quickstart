@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebClient", "WebClient\WebC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JavascriptClient", "JavascriptClient\JavascriptClient.csproj", "{4870F93D-4389-4C54-BD40-0351489F65A0}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JavascriptClient2", "JavascriptClient2\JavascriptClient2.csproj", "{A0565934-A800-4085-A851-8ABE18E780B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{4870F93D-4389-4C54-BD40-0351489F65A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4870F93D-4389-4C54-BD40-0351489F65A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4870F93D-4389-4C54-BD40-0351489F65A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0565934-A800-4085-A851-8ABE18E780B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0565934-A800-4085-A851-8ABE18E780B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0565934-A800-4085-A851-8ABE18E780B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0565934-A800-4085-A851-8ABE18E780B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +57,7 @@ Global
 		{F1126BA5-996A-4147-994C-008D9CE0E4BC} = {6A2542F7-90C7-444F-B2C3-3F5242735EF1}
 		{6B0267B2-FC1B-4FEF-9C5A-8CE2AC8F8A1A} = {6A2542F7-90C7-444F-B2C3-3F5242735EF1}
 		{4870F93D-4389-4C54-BD40-0351489F65A0} = {6A2542F7-90C7-444F-B2C3-3F5242735EF1}
+		{A0565934-A800-4085-A851-8ABE18E780B5} = {6A2542F7-90C7-444F-B2C3-3F5242735EF1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {13B9E7DD-04F2-4996-BF40-CEAECA060190}
